@@ -1,21 +1,25 @@
 <template>
-  <app-header />
-  <div class="repo">
-    <h2>-practice-project-note-application</h2>
-    <p class="repo__desc">以實作筆記本程式入門並學習node.js基礎</p>
-    <p>
-      <img src="./assets/img/repo/url.svg" alt="" class="repo__urlImg">
-      https://gith-ub.com/motea927/-practice-project-note-application
-    </p>
-  </div>
+  <app-header @setReposSize="setReposSize"/>
+  <app-repo :reposSize="reposSize"/>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue'
+import AppRepo from './components/AppRepo'
 
 export default {
   name: 'App',
-  components: { AppHeader }
+  components: { AppHeader, AppRepo },
+  methods: {
+    setReposSize (reposSize) {
+      this.reposSize = reposSize
+    }
+  },
+  data () {
+    return {
+      reposSize: 0 
+    }
+  }
 }
 </script>
 
@@ -31,22 +35,5 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.repo {
-  border: 1px solid #eee;
-  margin-top: 30px;
-  background-color: white;
-  padding: 20px;
-  width: 980px;
-  &__urlImg {
-    display: inline;
-    width: 20px;
-    height: 20px;
-  }
-  &__desc {
-    font-size: 16px;
-    line-height: 16px;
-  }
 }
 </style>

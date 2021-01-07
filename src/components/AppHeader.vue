@@ -34,6 +34,7 @@ export default {
       this.infoData.repos = response.data.public_repos
       this.infoData.location = response.data.location
       this.infoData.created = response.data.created_at.substring(0, 10)
+      this.$emit('setReposSize', this.infoData.repos)
     } catch (err) {
       console.log(err)
     }
@@ -69,6 +70,23 @@ export default {
       &__text {
         margin: 0;
         text-transform: capitalize;
+      }
+    }
+  }
+  @media (min-width: 768px) and (max-width: 990px){
+    .header {
+      width: 700px;
+    }
+  }
+  @media (max-width: 768px){
+    .header {
+      width: 300px;
+      flex-direction: column;
+    }
+    .info {
+      &__avatar {
+        order: -1;
+        align-self: center;
       }
     }
   }
