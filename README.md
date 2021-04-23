@@ -16,4 +16,4 @@ npm run build
 ```
 
 ### Demo
-[GitHub Pages](https://motea927.github.io/githubApi/demo/index.html).
+[GitHub Pages](https://motea927.github.io/example-github-api/demo/index.html).
