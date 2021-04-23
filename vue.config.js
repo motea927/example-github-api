@@ -1,5 +1,5 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/githubApi/demo'
+    ? '/example-github-api/demo'
     : '/'
 }
